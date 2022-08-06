@@ -3,11 +3,11 @@ const api_url = 'https://pokeapi.co/api/v2/pokemon';
 async function getData(){
     const response = await fetch(api_url);
     const data = await response.json();
-    data.results.forEach(element => {
+    data.results.forEach(Pokemon => {
         const GlavniDiv  = document.getElementById('PokedexContainerId');
         const div =  document.createElement('div');
         div.classList.add("item");
-        div.innerHTML = element.name;   
+        div.innerHTML = Pokemon.name;   
         GlavniDiv.append(div);
     })
 }
