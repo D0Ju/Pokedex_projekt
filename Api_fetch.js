@@ -9,39 +9,21 @@ async function getData(){
         div.classList.add("item");
         div.innerHTML = Pokemon.name;
         GlavniDiv.append(div);
-        getImage();
+        const urlPokemona = Pokemon.url;        
+        console.log(urlPokemona);
+        getImage(urlPokemona, div);
+
     })
 }
 
-// const api_url_slike = 'https://pokeapi.co/api/v2/pokemon';
-
-// async function getPicture(){
-//     const response = await fetch(api_url_slike);
-//     const data = await response.json();
-//     data.results.forEach(Slika => {
-
-//         const img =  document.createElement('img');
-//         img.innerHTML = ;  
-//         GlavniDiv.append(div);
-//     })
-// }
-
-
-//dohvacanje slike 
-const imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/2.png";
-
-function getImage(){
-fetch(imageUrl)
-  //                         vvvv
-  .then(response => response.blob())
-  .then(imageBlob => {
-      // Then create a local URL for that image and print it 
-      const imageObjectURL = URL.createObjectURL(imageBlob);
-      console.log(imageObjectURL);
-  });
+async function getImage(url,divItem){
+    const responseUrl = await fetch(url);
+    const dataImage = await responseUrl.json();
+    const Image = dataImage.sprites.other.home.front_default;
+    console.log(Image);
+    divItem.innerHTML += `<img src = "${Image}"/>`;
+    
 }
-   
-
 
 getData();
 

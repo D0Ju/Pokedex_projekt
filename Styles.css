@@ -13,17 +13,26 @@
     padding-right: 400PX;
     display: flex;
     height: 800px;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
 
 }
 .item{
     display: flex;
-    justify-content: center;
-    align-items: end;
+    flex-direction: column-reverse;
+    justify-content: start; 
+    align-items: center;
     width: 300px;
     height: 300px;
-    background: grey;
+    background: rgb(168, 159, 159);
     margin: 20px;
+    font-size: x-large;
+    text-transform: capitalize;
+    gap: 30px;
+}
+img{
+    width: 200px;
+    height: 200px;
+    align-items: top;
 }
