@@ -6,16 +6,17 @@
 .Title{
     display: flex;
     justify-content:center ;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 .flex-container{
     padding-left: 400px;
     padding-right: 400PX;
     display: flex;
-    height: 800px;
+    height: 2500px;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    padding-bottom: 300px;
 
 }
 .item{
