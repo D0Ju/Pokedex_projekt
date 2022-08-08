@@ -12,7 +12,7 @@ async function getData(){
         const urlPokemona = Pokemon.url;        
         console.log(urlPokemona);
         getImage(urlPokemona, div);
-
+        //makeButton(div);
     })
 }
 
@@ -22,8 +22,13 @@ async function getImage(url,divItem){
     const Image = dataImage.sprites.other.home.front_default;
     console.log(Image);
     divItem.innerHTML += `<img src = "${Image}"/>`;
+    divItem.innerHTML += `<button type = "button" href='#'>More Info</button>`;
     
 }
+// async function makeButton(divItem){
+
+//     divItem.innerHTML += `<button type = "button">More Info</button>`;
+// }
 
 getData();
 
