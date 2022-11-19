@@ -61,3 +61,11 @@ button:hover {
 	background-color: rgb(31, 114, 216);
 	transition: 400ms;
 }
+
+li {
+	display: inline;
+	padding: 15px;
+}
+.hidden {
+	display: none;
+}

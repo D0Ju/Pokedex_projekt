@@ -11,19 +11,37 @@ async function getData() {
 		GlavniDiv.append(div);
 		const urlPokemona = Pokemon.url;
 		console.log(urlPokemona);
-		getImage(urlPokemona, div);
+		getInfo(urlPokemona, div);
+		// element.getElementById("myBtn").addEventListener("click", getInfo());
 		//makeButton(div);
 	});
 }
 
-async function getImage(url, divItem) {
+async function getInfo(url, divItem) {
 	const responseUrl = await fetch(url);
 	const dataImage = await responseUrl.json();
 	const Image = dataImage.sprites.other.home.front_default;
+	const weight = dataImage.weight;
+	const height = dataImage.height;
 	console.log(Image);
-	divItem.innerHTML += `<img src = "${Image}"/>`;
-	divItem.innerHTML += `<button type = "button" href='#'>More Info</button>`;
+	divItem.innerHTML += `<img src = "${Image}"/>
+        <button OnClick ="Unhide()"type = "button" id = "myBtn" href='#'>More Info</button>
+        <ul id = "idUL" class = "hidden">
+            <li> Weight: ${weight}</li>D
+            <li> Height: ${height}</li>   
+        </ul>
+        `;
 }
+function Unhide() {
+	const Button = document.getElementById("myBtn");
+	Button.addEventListener("click", (e) => {
+		getElementById("idUL").classList.remove("hidden");
+	});
+}
+// async function getStats (){
+
+// }
+
 // async function makeButton(divItem){
 
 //     divItem.innerHTML += `<button type = "button">More Info</button>`;
